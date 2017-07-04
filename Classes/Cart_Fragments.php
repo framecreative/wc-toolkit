@@ -4,14 +4,11 @@ namespace WC_Toolkit;
 
 class Cart_Fragments
 {
-    public $params = [
-        'hash_cookie_name' => 'site_cart_fragments_hash'
-    ];
 
     /**
      * @param array $params
      */
-    public function __construct($params = [])
+    public function __construct()
     {
         if (is_admin()) {
             return;
@@ -32,7 +29,7 @@ class Cart_Fragments
             return;
         }
 
-        wc_setcookie($this->param('hash_cookie_name'), $this->get_fragments_hash());
+        wc_setcookie('site_cart_fragments_hash', $this->get_fragments_hash());
     }
 
     /**
