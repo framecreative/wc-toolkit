@@ -11,7 +11,7 @@ Creates the following ajax endpoints:
 
 ## Install
 
-`composer require framedigital/wc-toolkit`
+`composer require framecreative/wc-toolkit`
 
 ## Setup
 
