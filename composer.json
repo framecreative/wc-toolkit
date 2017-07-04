@@ -1,0 +1,20 @@
+{
+    "name": "framedigital/wc-toolkit",
+    "description": "Better woocommerce endpoints",
+    "type": "library",
+    "require": {
+        "php": ">=5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frame Creative",
+            "email": "digital@framecreative.com.au"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WC_Toolkit\\": "Classes"
+        }
+    }
+}
