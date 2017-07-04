@@ -40,7 +40,7 @@ class Cart_Fragments
      *
      * @return array
      */
-    public function get_fragments()
+    public static function get_fragments()
     {
         return [
             'html' => apply_filters('woocommerce_fragments_html', []),
@@ -55,7 +55,7 @@ class Cart_Fragments
      *
      * @return string
      */
-    public function get_fragments_hash()
+    public static function get_fragments_hash()
     {
         $hash = [
             'cart_data'    => WC()->cart->get_cart_for_session(),
@@ -75,8 +75,8 @@ class Cart_Fragments
     public function ajax_get_fragments()
     {
         wp_send_json([
-            'fragments' => $this->get_fragments(),
-            'hash' => $this->get_fragments_hash()
+            'fragments' => $this::get_fragments(),
+            'hash' => $this::get_fragments_hash()
         ]);
     }
 }
