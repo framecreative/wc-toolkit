@@ -1,3 +1,8 @@
-# WC Toolkit 1.0.0
+### WC Toolkit 1.1.0
+
+- Move cart fragments to Ajax class
+- Remove class constructor args
+
+### WC Toolkit 1.0.0
 
 - initial copy refactored into simple classes
