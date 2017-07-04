@@ -17,7 +17,7 @@ Creates the following ajax endpoints:
 
 Add `new \WC_Toolkit\WC_Toolkit();` to your function.php or anywhere in your code you initialise your theme.
 
-Then use the filter `woocommerce_fragments_data` to add your custom cart fragments
+Then use the filters `woocommerce_fragments_data` or `woocommerce_fragments_html` to add your custom cart fragments
 
 ## Reset UI
 
