@@ -12,7 +12,7 @@ class Ajax
             'cart_set_quantity',
             'add_coupon',
             'remove_coupon',
-            'get_refreshed_fragments'
+            'cart_fragments'
         ];
 
         foreach ($ajax_events as $ajax_event) {
@@ -242,6 +242,11 @@ class Ajax
             }
         }
         return false;
+    }
+
+    public function cart_fragments()
+    {
+        $this->_send_cart_success();
     }
 
     private function _send_cart_success()
