@@ -1,3 +1,7 @@
+### WC Toolkit 1.4.0
+
+- Remove actions `wc_ajax_site_cart_fragments` and `shutdown` causing errors
+
 ### WC Toolkit 1.3.0
 
 - Add missing hook `wc_ajax_site_cart_fragments`

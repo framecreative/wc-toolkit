@@ -5,9 +5,6 @@ namespace WC_Toolkit;
 class Cart_Fragments
 {
 
-    /**
-     * @param array $params
-     */
     public function __construct()
     {
         if (is_admin()) {
@@ -15,8 +12,6 @@ class Cart_Fragments
         }
 
         add_action('wp', [ $this, 'maybe_set_hash_cookie' ], 1000);
-        add_action('shutdown', [ $this, 'maybe_set_hash_cookie' ], 1000);
-        add_action('wc_ajax_site_cart_fragments', [ $this, 'ajax_get_fragments' ], 1000);
     }
 
     /**
@@ -64,16 +59,5 @@ class Cart_Fragments
         $hash = apply_filters('woocommerce_fragments_hash', $hash);
 
         return md5(json_encode($hash));
-    }
-
-    /**
-     * Get a refreshed cart fragment.
-     */
-    public static function ajax_get_fragments()
-    {
-        wp_send_json([
-            'fragments' => $this::get_fragments(),
-            'hash' => $this::get_fragments_hash()
-        ]);
     }
 }
