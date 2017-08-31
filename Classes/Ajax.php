@@ -189,13 +189,13 @@ class Ajax
      */
     private function add_to_cart_handler_variable($product_id)
     {
-        $adding_to_cart     = wc_get_product($product_id);
-        $variation_id       = empty($_REQUEST['variation_id']) ? '' : absint($_REQUEST['variation_id']);
-        $quantity           = empty($_REQUEST['quantity']) ? 1 : wc_stock_amount($_REQUEST['quantity']);
-        $missing_attributes = array();
-        $variations         = array();
-        $attributes         = $adding_to_cart->get_attributes();
-        $variation          = wc_get_product($variation_id);
+        $adding_to_cart      = wc_get_product($product_id);
+        $variation_id        = empty($_REQUEST['variation_id']) ? '': absint($_REQUEST['variation_id']);
+        $quantity            = empty($_REQUEST['quantity']) ? 1:      wc_stock_amount($_REQUEST['quantity']);
+        $missing_attributes  = array();
+        $variations          = array();
+        $attributes          = $adding_to_cart->get_attributes();
+        $variationAttributes = wc_get_product_variation_attributes($variation_id);
 
         // Verify all attributes
         foreach ($attributes as $attribute) {
@@ -216,7 +216,7 @@ class Ajax
                 }
 
                 // Get valid value from variation
-                $valid_value = $variation->variation_data[ $taxonomy ];
+                $valid_value = $variationAttributes[ $taxonomy ];
 
                 // Allow if valid
                 if ('' === $valid_value || $valid_value === $value) {
