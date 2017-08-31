@@ -1,3 +1,7 @@
+### WC Toolkit 1.4.1
+
+- Use `wc_get_product_variation_attributes` to access product variation attrs
+
 ### WC Toolkit 1.4.0
 
 - Remove actions `wc_ajax_site_cart_fragments` and `shutdown` causing errors
