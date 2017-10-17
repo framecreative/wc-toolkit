@@ -1,3 +1,7 @@
+### WC Toolkit 1.4.2
+
+- Add removal of selectWoo which was introduced in Woo 3.2
+
 ### WC Toolkit 1.4.1
 
 - Use `wc_get_product_variation_attributes` to access product variation attrs

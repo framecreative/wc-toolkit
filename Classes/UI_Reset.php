@@ -24,5 +24,7 @@ class UI_Reset
         // remove and minify select2 with theme
         wp_dequeue_script('select2');
         wp_dequeue_style('select2');
+        wp_dequeue_script('selectWoo');
+        wp_dequeue_style('selectWoo');
     }
 }
