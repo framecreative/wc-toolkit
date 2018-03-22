@@ -29,6 +29,11 @@ class Ajax
         $product_id = absint($this->_get('product_id'));
         $variation_id = absint($this->_get('variation_id'));
         $quantity = $this->_get('quantity') ? absint($this->_get('quantity')) : 1;
+        $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
+
+        if ( !$passed_validation ) {
+            $this->_return_first_notice();
+        }
 
 
         if (! empty($variation_id)) {
@@ -79,8 +84,15 @@ class Ajax
             // remove
             WC()->cart->remove_cart_item($item_key);
         } else {
+
             $cart_item = WC()->cart->get_cart_item($item_key);
             $product_data = wc_get_product($cart_item['variation_id'] ? $cart_item['variation_id'] : $cart_item['product_id']);
+
+            $passed_validation  = apply_filters( 'woocommerce_update_cart_validation', true, $item_key, $cart_item, $quantity );
+
+            if ( !$passed_validation ) {
+                $this->_return_first_notice();
+            }
 
 
             // Stock check - this time accounting for whats already in-cart
