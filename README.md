@@ -19,6 +19,10 @@ Add `new \WC_Toolkit\WC_Toolkit();` to your function.php or anywhere in your cod
 
 Then use the filters `woocommerce_fragments_data` or `woocommerce_fragments_html` to add your custom cart fragments
 
+## Upgrading to version 2
+
+Ajax success responses are now sent with `wp_send_json_success` instead of `wp_send_json`. So JS fragment code will need to refer to `response.data.fragments` instead of `response.fragments`.
+
 ## Reset UI
 
 Using `new \WC_Toolkit\UI_Reset();` will dequeue all Woocommerce styles, pretty photo js/css, select2 js/css, and the default cart fragments js.

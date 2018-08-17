@@ -1,3 +1,8 @@
+### WC Toolkit 2.0.0
+
+- Send success using `wp_send_json_success`. Changes JS response object to include success and data attributes.
+- Updated add to cart endpoint to handle variable product better.
+
 ### WC Toolkit 1.4.2
 
 - Add removal of selectWoo which was introduced in Woo 3.2
