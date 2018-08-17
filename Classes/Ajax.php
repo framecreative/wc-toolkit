@@ -263,12 +263,11 @@ class Ajax
 
     private function _send_cart_success()
     {
-        wp_send_json([
+        wp_send_json_success([
             'fragments' => Cart_Fragments::get_fragments(),
             'hash' => Cart_Fragments::get_fragments_hash()
         ]);
 
-        wp_send_json_success();
     }
 
     /**
