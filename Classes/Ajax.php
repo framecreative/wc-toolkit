@@ -135,7 +135,7 @@ class Ajax
             ));
         }
 
-        if (WC()->cart->add_discount($coupon_code)) {
+        if (WC()->cart->apply_coupon($coupon_code)) {
             wc_clear_notices(); // remove success message
             $this->_send_cart_success();
         } else {
